@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMART START</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assignment5_style.css" />
+    <style>
+      .light-mode {
+        background-color: #f0f0f0;
+        color: #333;
+      }
+
+      .image-gallery img {
+        cursor: pointer;
+        margin: 5px;
+        width: 100px;
+        height: auto;
+        transition: transform 0.2s;
+      }
+
+      .image-gallery img:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="assignment5_index.html">SMART START</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="assignment5_index.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="assignment5_chat.html">Chat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="contact-button">Contact</a>
+          </li>
+        </ul>
+        <!-- Light/Dark Mode Toggle Button -->
+        <button id="theme-toggle" class="btn btn-link">
+          <img
+            id="theme-icon"
+            src="https://i.pinimg.com/736x/40/a7/41/40a741ca12a29f2ece5f37f89ef7af3c.jpg"
+            alt="Light Bulb Icon"
+            style="width: 30px"
+          />
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+      <h2>Our Services</h2>
+      <div class="service-description">
+        <p>
+          We offer innovative services to get your business started on the right
+          foot. Choose from a variety of investment plans and let us help you
+          grow.
+        </p>
+        <button id="read-more" class="btn btn-info">Read More</button>
+        <div id="more-info" style="display: none">
+          <p>stonks...</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+            <img
+              src="https://i.pinimg.com/736x/5d/e1/a0/5de1a0f7668ddd2eaffdfaaba1a413a4.jpg"
+              class="card-img-top"
+              alt="Plan A"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Plan A</h5>
+              <p class="card-text">Description for Plan A.</p>
+              <a
+                href="#"
+                class="btn btn-warning"
+                style="background-color: #fcfe58; border: none"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+            <img
+              src="https://i.pinimg.com/474x/27/bd/37/27bd37014182c1bf80f24863d049b2fc.jpg"
+              class="card-img-top"
+              alt="Plan B"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Plan B</h5>
+              <p class="card-text">Description for Plan B.</p>
+              <a
+                href="#"
+                class="btn btn-warning"
+                style="background-color: #fcfe58; border: none"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+            <img
+              src="https://i.pinimg.com/736x/8d/df/0b/8ddf0bf7e08661297d0651bda93943f7.jpg"
+              class="card-img-top"
+              alt="Plan C"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Plan C</h5>
+              <p class="card-text">Description for Plan C.</p>
+              <a
+                href="#"
+                class="btn btn-warning"
+                style="background-color: #fcfe58; border: none"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Gallery -->
+      <h2>Image Gallery</h2>
+      <div class="image-gallery">
+        <img
+          src="https://i.pinimg.com/736x/5d/e1/a0/5de1a0f7668ddd2eaffdfaaba1a413a4.jpg"
+          alt="Thumbnail A"
+          data-large="https://i.pinimg.com/736x/5d/e1/a0/5de1a0f7668ddd2eaffdfaaba1a413a4.jpg"
+        />
+        <img
+          src="https://i.pinimg.com/474x/27/bd/37/27bd37014182c1bf80f24863d049b2fc.jpg"
+          alt="Thumbnail B"
+          data-large="https://i.pinimg.com/474x/27/bd/37/27bd37014182c1bf80f24863d049b2fc.jpg"
+        />
+        <img
+          src="https://i.pinimg.com/736x/8d/df/0b/8ddf0bf7e08661297d0651bda93943f7.jpg"
+          alt="Thumbnail C"
+          data-large="https://i.pinimg.com/736x/8d/df/0b/8ddf0bf7e08661297d0651bda93943f7.jpg"
+        />
+        <img id="large-image" class="img-fluid" src="" alt="Selected Image" />
+      </div>
+
+      <!-- Accordion for FAQs -->
+      <h2>FAQs</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button
+                class="btn btn-link"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                What is SMART START?
+              </button>
+            </h5>
+          </div>
+
+          <div
+            id="collapseOne"
+            class="collapse show"
+            aria-labelledby="headingOne"
+            data-parent="#faqAccordion"
+          >
+            <div class="card-body">
+              SMART START is a platform that provides innovative services to
+              help entrepreneurs establish and grow their businesses.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button
+                class="btn btn-link collapsed"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                How can I contact you?
+              </button>
+            </h5>
+          </div>
+          <div
+            id="collapseTwo"
+            class="collapse"
+            aria-labelledby="headingTwo"
+            data-parent="#faqAccordion"
+          >
+            <div class="card-body">
+              You can contact us through our Contact page or email us at
+              support@smartstart.com.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Theme toggle
+      const themeToggle = document.getElementById("theme-toggle");
+      const themeIcon = document.getElementById("theme-icon");
+      let isLightMode = true;
+
+      themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("light-mode");
+        isLightMode = !isLightMode;
+        themeIcon.src = isLightMode
+          ? "https://i.pinimg.com/736x/40/a7/41/40a741ca12a29f2ece5f37f89ef7af3c.jpg"
+          : "https://i.pinimg.com/736x/f2/24/d2/f224d2a02ad9d9beeceb244dfe1d1bc0.jpg";
+      });
+
+      // Read More Button
+      document.getElementById("read-more").addEventListener("click", () => {
+        const moreInfo = document.getElementById("more-info");
+        moreInfo.style.display =
+          moreInfo.style.display === "none" ? "block" : "none";
+      });
+
+      // Image Gallery
+      const thumbnails = document.querySelectorAll(".image-gallery img");
+      const largeImage = document.getElementById("large-image");
+
+      thumbnails.forEach((thumbnail) => {
+        thumbnail.addEventListener("click", () => {
+          const largeSrc = thumbnail.dataset.large;
+          largeImage.src = largeSrc;
+        });
+      });
+
+      // Keyboard Navigation
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowRight") {
+          // Next image
+          const currentIndex = Array.from(thumbnails).findIndex(
+            (img) => img.dataset.large === largeImage.src
+          );
+          const nextIndex = (currentIndex + 1) % thumbnails.length;
+          largeImage.src = thumbnails[nextIndex].dataset.large;
+        } else if (event.key === "ArrowLeft") {
+          // Previous image
+          const currentIndex = Array.from(thumbnails).findIndex(
+            (img) => img.dataset.large === largeImage.src
+          );
+          const prevIndex =
+            (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+          largeImage.src = thumbnails[prevIndex].dataset.large;
+        }
+      });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
